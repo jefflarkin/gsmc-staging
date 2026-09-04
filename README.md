@@ -103,6 +103,30 @@ Notes:
 - Header/footer links still point at the live easttnscouts.org pages — that is
   intentional for a mockup; change them if your new page should link
   elsewhere.
+- `_template.html` is a clean blank snapshot of `index.html` (chrome only,
+  empty content region) — your safe starting point for a new page.
+- `404.html` gives unknown URLs a themed not-found page.
+
+## Hosting on GitHub Pages
+
+1. Create an empty repository on GitHub (e.g. `gsmc-pages`).
+2. Push this folder:
+
+   ```bash
+   git remote add origin git@github.com:<you>/gsmc-pages.git
+   git push -u origin main
+   ```
+
+3. In the repo: **Settings → Pages → Build and deployment** →
+   Source: **Deploy from a branch** → Branch: **main**, folder: **/ (root)** → Save.
+4. Wait for the deploy job (≈1 min), then open
+   `https://<you>.github.io/gsmc-pages/`.
+
+Every other file in the repo (`_template.html`, content pages you add,
+`assets/`, `images/`) is served at the same path as in this folder, so
+`<base>/newpage.html` works as-is. `404.html` is used automatically for unknown
+paths. Google Fonts load from the live CDN, so the hosted page needs internet
+access.
 
 ## Verifying fidelity
 
