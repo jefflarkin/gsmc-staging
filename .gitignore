@@ -1,0 +1,15 @@
+# Local tooling caches (Playwright/Chromium, npm, fakes home)
+.browsers/
+.npmcache/
+.home/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Local verification screenshots
+shots/

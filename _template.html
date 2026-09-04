@@ -1,0 +1,321 @@
+<!doctype html>
+<html class="no-js" lang="en-US" id="html">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta class="foundation-mq">
+
+	<!--  =====================================================================
+	    TEMPLATE: Great Smoky Mountain Council standard page
+	    Source: https://easttnscouts.org/advancement/ (GSMC WordPress theme)
+	    ---------------------------------------------------------------------
+	    HOW TO USE THIS TEMPLATE
+	    1. Change the <title> and meta title below.
+	    2. Add your new page content between the "CONTENT START" and
+	       "CONTENT END" comment markers (empty .wpb_wrapper below is
+	       the drop zone).
+	       Everything OUTSIDE those markers (header, navigation, content
+	       wrapper, footer, search overlay) is the site's fixed look &
+	       structure — do not edit it.
+	    3. Content markup conventions used by this theme (examples in
+	       README.md): one vc_row > vc_column per full-width block, each
+	       block wrapped in .wpb_wrapper, with <p>/<ul>/<ol>/<a>,
+	       headings, images inside.
+	    ===================================================================== -->
+
+	<title>Advancement - Great Smoky Mountain Council</title>
+
+	<meta name="theme-color" content="#3e4527">
+	<meta property="og:title" content="Advancement - Great Smoky Mountain Council">
+	<meta property="og:site_name" content="Great Smoky Mountain Council">
+
+	<!-- Site fonts (Quantico, Roboto Condensed, Roboto, Teko) — kept from the live site -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quantico:400,400i,700,700i|Roboto+Condensed:400,400i,700,700i|Roboto:400,400i,500,500i,900,900i|Teko:400,600">
+
+	<!-- WPBakery page-builder layout rules (used by vc_row / vc_column content blocks) -->
+	<link rel="stylesheet" href="assets/css/js_composer_front_custom.css">
+
+	<!-- Motion-UI (Foundation companion), Foundation, Font Awesome 4.7, GSMC theme -->
+	<link rel="stylesheet" href="assets/css/motion-ui.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.css">
+	<link rel="stylesheet" href="assets/css/foundation.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- Full-screen search overlay plugin -->
+	<link rel="stylesheet" href="assets/css/full-screen-search.css">
+
+	<style>
+	/* Small helpers the theme expects from the WPBakery page builder (only what
+	   this template uses). Keep or delete with the content blocks that use them. */
+	.vc_empty_space { display: block; }
+	.vc_single_image-img { max-width: 100%; height: auto; }
+	.wpb_single_image.vc_align_center { text-align: center; }
+	.wpb_single_image { margin-bottom: 1.5rem; }
+	</style>
+</head>
+
+<body class="wp-singular page-template-default page wp-theme-gsmc vc_responsive">
+
+	<div class="wrapper">
+
+		<div>
+			<div class="nofeature">
+
+				<!-- ===================================================================
+				     FIXED HEADER — do not edit (logo, menus, BE A SCOUT button)
+			    ==================================================================== -->
+				<header class="header" role="banner">
+
+					<div class="title-bar mobile" data-responsive-toggle="top-bar-menu" data-hide-for="medium">
+						<button class="menu-icon" type="button" data-toggle>Menu</button>
+					</div>
+
+					<div id="skip"><a href="#content">Skip to Main Content</a></div>
+
+					<div class="row" id="top-nav">
+						<div class="top-bar-left">
+							<nav role="navigation" aria-label="logo">
+								<ul class="menu">
+									<li><a href="https://easttnscouts.org"><span class="offscreen">Great Smoky Mountain Council</span></a></li>
+								</ul>
+							</nav>
+						</div>
+
+						<div id="top-bar-menu">
+							<nav role="navigation" aria-label="menu 1">
+								<ul id="menu-top-buttons" class="vertical medium-horizontal menu top-bar" data-responsive-menu="accordion" data-close-on-click-inside="false" data-submenu-toggle="true">
+									<li class="badges scoutspage menu-item menu-item-has-children">
+										<a href="https://easttnscouts.org/scouts/">Scouts</a>
+										<ul class="sub-menu">
+											<li class="menu-item menu-item-has-children"><a href="https://easttnscouts.org/cubscouts/">CubScouts</a>
+												<ul class="sub-menu">
+													<li><a href="https://easttnscouts.org/cubactivities/">Cub Activities</a></li>
+													<li><a href="https://easttnscouts.org/cubscoutawards/">Cub Scout Awards</a></li>
+													<li><a href="https://easttnscouts.org/cubscoutshandbooks/">Cub Scout Handbooks</a></li>
+													<li><a href="https://easttnscouts.org/cubscoutuniforms/">Cub Scouts Uniforms</a></li>
+												</ul>
+											</li>
+											<li class="menu-item menu-item-has-children"><a href="https://easttnscouts.org/scoutsbsa/">Scouts BSA</a>
+												<ul class="sub-menu">
+													<li><a href="https://easttnscouts.org/scoutsbsaactivities/">Scouts BSA Activities</a></li>
+													<li><a href="https://easttnscouts.org/scoutsbsaadvancement/">Scouts BSA Advancement</a></li>
+													<li><a href="https://easttnscouts.org/scoutsbsaawards/">Scouts BSA Awards</a></li>
+													<li><a href="https://easttnscouts.org/scoutsbsatraining/">Scouts BSA Training</a></li>
+													<li><a href="https://easttnscouts.org/scoutsbsauniforms/">Scouts BSA Uniform</a></li>
+												</ul>
+											</li>
+											<li class="menu-item menu-item-has-children"><a href="https://easttnscouts.org/venturing/">Venturing</a>
+												<ul class="sub-menu">
+													<li><a href="https://easttnscouts.org/venturingawards/">Venturing Awards</a></li>
+													<li><a href="https://easttnscouts.org/venturinguniforms/">Venturing Uniform</a></li>
+												</ul>
+											</li>
+											<li class="menu-item menu-item-has-children"><a href="https://easttnscouts.org/seascouts/">Sea Scouts</a>
+												<ul class="sub-menu">
+													<li><a href="https://easttnscouts.org/seascoutawards/">SeaScoutAwards</a></li>
+													<li><a href="https://easttnscouts.org/seascoutuniforms/">Sea Scout Uniform</a></li>
+												</ul>
+											</li>
+											<li><a href="https://easttnscouts.org/exploring/">Exploring</a></li>
+											<li><a href="https://easttnscouts.org/stem/">STEM in Scouting</a></li>
+											<li><a href="https://easttnscouts.org/international-scouting/">International Scouting</a></li>
+											<li class="menu-item menu-item-has-children"><a href="https://easttnscouts.org/oa/">Order of the Arrow</a>
+												<ul class="sub-menu">
+													<li><a href="https://easttnscouts.org/oa/chapters/">Chapters</a></li>
+													<li><a href="https://easttnscouts.org/oa/events/">Events</a></li>
+													<li><a href="https://easttnscouts.org/oa/resources/">Resources</a></li>
+													<li><a href="https://easttnscouts.org/oa/about-us/">About Us</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="badges parentspage menu-item menu-item-has-children">
+										<a href="https://easttnscouts.org/parents/">Parents</a>
+										<ul class="sub-menu">
+											<li><a href="https://easttnscouts.org/parents/about-scouting/">About Scouting</a></li>
+											<li><a href="https://easttnscouts.org/parents/structure-of-scouting/">Structure of Scouting</a></li>
+											<li><a href="https://easttnscouts.org/parents/advancement/">Advancement</a></li>
+											<li><a href="https://easttnscouts.org/parents/meetings/">Meetings</a></li>
+											<li><a href="https://easttnscouts.org/parents/uniforms/">Uniforms</a></li>
+											<li><a href="https://easttnscouts.org/parents/activities/">Activities</a></li>
+											<li><a href="https://easttnscouts.org/parents/training-and-safety/">Training and Safety</a></li>
+											<li><a href="https://easttnscouts.org/parents/fundraising/">Fundraising</a></li>
+											<li><a href="https://easttnscouts.org/parents/cost/">Cost</a></li>
+											<li><a href="https://easttnscouts.org/parents/volunteer/">Volunteer</a></li>
+										</ul>
+									</li>
+									<li class="badges volpage menu-item menu-item-has-children">
+										<a href="https://easttnscouts.org/volunteers/">Volunteers</a>
+										<ul class="sub-menu">
+											<li><a href="https://easttnscouts.org/specialneeds/">Special Needs In Scouting Resources</a></li>
+											<li><a href="https://easttnscouts.org/volunteers/scouting-training/">Training</a></li>
+											<li><a href="https://easttnscouts.org/volunteers/fundraising/">Fundraising</a></li>
+											<li><a href="https://easttnscouts.org/volunteers/leader-resources/">Leader Resources</a></li>
+											<li><a href="https://easttnscouts.org/volunteers/scoutingsafely/">Scouting Safely</a></li>
+											<li><a href="https://easttnscouts.org/volunteers/resources/">Volunteer Resources</a></li>
+											<li class="menu-item menu-item-has-children"><a href="https://easttnscouts.org/commissioner/">Commissioner</a>
+												<ul class="sub-menu">
+													<li><a href="https://easttnscouts.org/commissioner/about/">About</a></li>
+													<li><a href="https://easttnscouts.org/commissioner/resources/">Resources</a></li>
+													<li><a href="https://easttnscouts.org/commissioner/the-latest/">The Latest</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="badges alumpage menu-item"><a href="https://easttnscouts.org/alumni/">Alumni</a></li>
+								</ul>
+							</nav>
+
+							<nav role="navigation" aria-label="menu 2">
+								<ul id="menu-top-bar" class="vertical medium-horizontal menu top-bar" data-responsive-menu="accordion" data-close-on-click-inside="false" data-submenu-toggle="true">
+									<li><a href="https://easttnscouts.org/calendars/">Calendars</a></li>
+									<li class="menu-item menu-item-has-children">
+										<a href="https://easttnscouts.org/about/">About</a>
+										<ul class="menu">
+											<li class="menu-item menu-item-has-children">
+												<a href="https://easttnscouts.org/about/districts/">Districts</a>
+												<ul class="menu">
+													<li><a href="https://easttnscouts.org/about/districts/cades-cove/">Cades Cove</a></li>
+													<li><a href="https://easttnscouts.org/about/districts/cataloochee/">Cataloochee</a></li>
+													<li><a href="https://easttnscouts.org/about/districts/eagle-creek/">Eagle Creek</a></li>
+													<li><a href="https://easttnscouts.org/about/districts/mt-cammerer/">Mount Cammerer</a></li>
+													<li><a href="https://easttnscouts.org/about/districts/mt-le-conte/">Mount Le Conte</a></li>
+													<li><a href="https://easttnscouts.org/about/districts/stem/">STEM</a></li>
+												</ul>
+											</li>
+											<li class="menu-item menu-item-has-children">
+												<a href="https://easttnscouts.org/about/camps/">Camps</a>
+												<ul class="menu">
+													<li class="menu-item menu-item-has-children">
+														<a href="https://easttnscouts.org/about/camps/buck-toms/">Buck Toms</a>
+														<ul class="menu">
+															<li><a href="https://easttnscouts.org/summercamp/">Summer Camp</a></li>
+															<li><a href="https://easttnscouts.org/about/camps/buck-toms/short-term-camping/">Short Term Camping</a></li>
+															<li><a href="https://easttnscouts.org/about/camps/buck-toms/staff/">Be a Staff Member</a></li>
+															<li><a href="https://easttnscouts.org/about/camps/buck-toms/history/">History</a></li>
+														</ul>
+													</li>
+													<li><a href="https://easttnscouts.org/about/camps/pellissippi/">Pellissippi</a></li>
+												</ul>
+											</li>
+											<li><a href="https://easttnscouts.org/about/people/">Council Staff</a></li>
+											<li><a href="https://easttnscouts.org/about/board/">Board</a></li>
+											<li><a href="https://easttnscouts.org/about/history/">History</a></li>
+											<li><a href="https://easttnscouts.org/about/contact-us/">Contact Us</a></li>
+										</ul>
+									</li>
+									<li><a href="https://easttnscouts.org/support-scouting/">Support Scouting</a></li>
+									<li><a href="https://easttnscouts.org/scout-shop/">Scout Shop</a></li>
+									<li><a href="https://easttnscouts.org/go-to-camp/">Go To Camp</a></li>
+									<li><a href="https://easttnscouts.org/quicklinks/">Quick Links</a></li>
+									<li class="fa fa-search menu-item"><a href="#">search</a></li>
+								</ul>
+							</nav>
+						</div>
+
+						<div class="top-bar-right">
+							<nav role="navigation" aria-label="scout button">
+								<ul class="menu">
+									<li><a href="https://easttnscouts.org/be-a-scout">BE A SCOUT</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</header> <!-- end .header -->
+
+			</div>
+		</div>
+
+		<!-- ===================================================================
+		     FIXED CONTENT WRAPPER — keep this outer structure; only the
+		     article <section> below (CONTENT markers) is editable.
+		    ==================================================================== -->
+		<div id="content">
+
+			<div id="inner-content" class="row">
+
+				<main id="main" class="large-12 medium-12 columns" role="main">
+
+					<article class="entry" role="article">
+
+						<section class="entry-content" itemprop="articleBody">
+							<div class="wpb-content-wrapper" id="wpb-content-root">
+
+								<!-- ==== CONTENT START — add new page content below this line ====
+								 Building blocks (text, image, spacer) are documented in README.md
+								 and in the captured sample page: src/_research/page.html.
+								 Keep everything inside a vc_row > vc_column > wpb_wrapper. -->
+
+								<div class="vc_row wpb_row vc_row-fluid">
+
+									<div class="wpb_column vc_column_container vc_col-sm-12">
+										<div class="vc_column-inner">
+											<div class="wpb_wrapper">
+
+											</div><!-- .wpb_wrapper -->
+										</div><!-- .vc_column-inner -->
+									</div><!-- .vc_col-sm-12 -->
+
+								</div><!-- .vc_row -->
+
+								<!-- ==== CONTENT END   — new page content above this line ==== -->
+
+							</div>
+						</section><!-- / .entry-content -->
+
+						<footer class="article-footer"></footer>
+					</article>
+
+				</main><!-- #main -->
+
+			</div><!-- #inner-content -->
+
+		</div><!-- #content -->
+
+		<!-- ===================================================================
+		     FIXED FOOTER — do not edit
+		    ==================================================================== -->
+		<footer class="footer" role="contentinfo">
+			<div id="inner-footer" class="row">
+				<div class="large-12 medium-12 columns">
+					<ul id="foobar" class="sidebar row">
+
+						<li id="enhancedtextwidget-7" class="signup widget widget_text enhanced-text-widget large-3 medium-3 small-12 columns"><h2 class="widgettitle">Get Our E-News!</h2><div class="textwidget widget-text"><p style="text-align: center;"><a href="https://www.easttnscouts.org/enews-signup/">SIGN UP NOW &gt;</a></p></div></li>
+						<li id="enhancedtextwidget-6" class="address widget widget_text enhanced-text-widget large-3 medium-3 small-12 columns"><h2 class="widgettitle">Council Office</h2><div class="textwidget widget-text"><p style="text-align: center;">1333 Old Weisgarber Road<br>
+Knoxville, TN 37909<br>
+Phone 865-588-6514<br>
+Fax 865-212-0076</p></div></li>
+						<li class="credit widget widget_text enhanced-text-widget large-3 medium-3 small-12 columns"><div class="textwidget widget-text"><p><a href="https://www.easttnscouts.org/privacy-policy/">Privacy Policy</a> &nbsp;&nbsp; <a href="https://easttnscouts.org/wp-content/uploads/2022/12/GSMC-REFUND-POLICY-1.pdf">Events Refund Policy</a><br>
+&copy;2026 GSMC &nbsp;&nbsp; Site by: <a href="https://www.robineaster.com" target="_blank" rel="noopener">Robin Easter Design</a></p></div></li>
+						<li class="gsmcsocial widget widget_text enhanced-text-widget large-3 medium-3 small-12 columns"><div class="textwidget widget-text"><a href="https://www.facebook.com/eastTNscouts/" target="_blank" rel="noopener" class="social fb"><span class="offscreen">Facebook</span></a><a href="https://www.instagram.com/easttnscouts/" target="_blank" rel="noopener" class="social in"><span class="offscreen">Instagram</span></a><a href="https://twitter.com/eastTNscouts/" target="_blank" rel="noopener" class="social tw"><span class="offscreen">X</span></a><a href="https://www.youtube.com/@easttnscouts2223/shorts/" target="_blank" rel="noopener" class="social pi"><span class="offscreen">Youtube</span></a></div></li>
+
+					</ul>
+				</div>
+			</div><!-- #inner-footer -->
+		</footer><!-- .footer -->
+
+	</div><!-- .main-content -->
+	</div><!-- .off-canvas-wrapper -->
+
+	<!-- Full-screen search overlay (triggered by the magnifier in the header) -->
+	<div id="full-screen-search">
+		<button type="button" class="close" id="full-screen-search-close">X</button>
+		<form role="search" method="get" action="https://easttnscouts.org/" id="full-screen-search-form">
+			<div id="full-screen-search-container">
+				<label for="full-screen-search-input" class="offscreen">Search</label>
+				<input type="text" name="s" placeholder="Search" id="full-screen-search-input" />
+			</div>
+		</form>
+	</div>
+
+	<!-- Fixed script set: jQuery, Foundation 6.3.1 + Motion UI, theme, search overlay -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/what-input.min.js"></script>
+	<script src="assets/js/foundation.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/full-screen-search.js"></script>
+</body>
+</html>
