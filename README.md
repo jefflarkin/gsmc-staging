@@ -105,7 +105,6 @@ Notes:
   elsewhere.
 - `_template.html` is a clean blank snapshot of `index.html` (chrome only,
   empty content region) — your safe starting point for a new page.
-- `404.html` gives unknown URLs a themed not-found page.
 
 ## Hosting on GitHub Pages
 
@@ -124,9 +123,8 @@ Notes:
 
 Every other file in the repo (`_template.html`, content pages you add,
 `assets/`, `images/`) is served at the same path as in this folder, so
-`<base>/newpage.html` works as-is. `404.html` is used automatically for unknown
-paths. Google Fonts load from the live CDN, so the hosted page needs internet
-access.
+`<base>/newpage.html` works as-is. Google Fonts load from the live CDN, so the
+hosted page needs internet access.
 
 ## Verifying fidelity
 
