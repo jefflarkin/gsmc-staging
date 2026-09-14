@@ -49,6 +49,28 @@ src/_research/    ← original captured page HTML for reference
 
 Copy, repeat as needed — each block is one `vc_column` inside the content `vc_row`.
 
+Page heading (the H1 above the content). This is the pattern used by the
+actual site's pages (e.g. `/scouts/`, `/parents/advancement/`): a spacer that
+pushes the heading below the hanging header chevron band, then a centered
+`<h1>`. Use this as the first block on the page (it is already in `index.html`).
+
+```html
+<div class="vc_row wpb_row vc_row-fluid">
+  <div class="wpb_column vc_column_container vc_col-sm-12">
+    <div class="vc_column-inner">
+      <div class="wpb_wrapper">
+        <div class="vc_empty_space" style="height: 160px"><span class="vc_empty_space_inner"></span></div>
+        <h1 style="text-align: center;">Page Title</h1>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+Without the `vc_empty_space` spacer the H1 rides up under the absolutely
+positioned header and gets clipped — that's the "heading hidden behind the
+header" problem.
+
 Full-width text block (the most common building unit):
 
 ```html
@@ -105,6 +127,10 @@ Notes:
   elsewhere.
 - `_template.html` is a clean blank snapshot of `index.html` (chrome only,
   empty content region) — your safe starting point for a new page.
+- Short pages (little content) automatically fill the viewport so the footer
+  sits at the bottom of the screen — the page fills via
+  `.wrapper { display:flex; … min-height:100vh }` in the head `<style>`
+  block; delete those three rules if you ever want the old floaty behavior.
 
 ## Hosting on GitHub Pages
 

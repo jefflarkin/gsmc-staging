@@ -54,6 +54,13 @@
 	.vc_single_image-img { max-width: 100%; height: auto; }
 	.wpb_single_image.vc_align_center { text-align: center; }
 	.wpb_single_image { margin-bottom: 1.5rem; }
+
+	/* Fill the viewport height on short pages so the footer sits at the
+	   bottom of the screen (the footer keeps its designed size; the extra
+	   space goes above it). Remove on long-content pages if undesired. */
+	.wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+	#content { flex: 1 1 auto; }
+	footer.footer { flex: 0 0 auto; }
 	</style>
 </head>
 
@@ -244,7 +251,20 @@
 						<section class="entry-content" itemprop="articleBody">
 							<div class="wpb-content-wrapper" id="wpb-content-root">
 
-                <h1>Advancement</h1>
+								<!-- Page heading — real-site pattern: spacer so the H1 clears the
+								     header chevron band, then a centered <h1> (/parents/advancement/,
+								     /scouts/ etc. all do exactly this). -->
+								<div class="vc_row wpb_row vc_row-fluid">
+									<div class="wpb_column vc_column_container vc_col-sm-12">
+										<div class="vc_column-inner">
+											<div class="wpb_wrapper">
+												<div class="vc_empty_space" style="height: 160px"><span class="vc_empty_space_inner"></span></div>
+												<h1 style="text-align: center;">Advancement</h1>
+											</div><!-- .wpb_wrapper -->
+										</div><!-- .vc_column-inner -->
+									</div><!-- .vc_col-sm-12 -->
+								</div><!-- .vc_row -->
+
 								<!-- ==== CONTENT START — add new page content below this line ====
 								 Building blocks (text, image, spacer) are documented in README.md
 								 and in the captured sample page: src/_research/page.html.

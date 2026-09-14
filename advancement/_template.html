@@ -54,6 +54,13 @@
 	.vc_single_image-img { max-width: 100%; height: auto; }
 	.wpb_single_image.vc_align_center { text-align: center; }
 	.wpb_single_image { margin-bottom: 1.5rem; }
+
+	/* Fill the viewport height on short pages so the footer sits at the
+	   bottom of the screen (the footer keeps its designed size; the extra
+	   space goes above it). Remove on long-content pages if undesired. */
+	.wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+	#content { flex: 1 1 auto; }
+	footer.footer { flex: 0 0 auto; }
 	</style>
 </head>
 
