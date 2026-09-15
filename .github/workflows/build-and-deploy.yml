@@ -1,0 +1,66 @@
+# Build the Advancement page (index.md -> index.html) and deploy to GitHub
+# Pages. Runs on every push to main (and on PRs, for build validation).
+#
+# One-time setup in the repo:
+#   Settings → Pages → Build and deployment → Source: "GitHub Actions"
+#
+# Locally the same build is:  cd advancement && npm run build
+
+name: Build & deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# One deployment at a time, newest push wins.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install build dependencies
+        working-directory: advancement
+        run: npm ci
+
+      - name: Build index.html from index.md
+        working-directory: advancement
+        run: npm run build
+
+      - name: Package artifact for upload
+        shell: bash
+        run: |
+          # Keep only what the site serves (node_modules & local caches are
+          # gitignored, which the uploader also respects, but be explicit).
+          rm -rf advancement/node_modules advancement/.npmcache advancement/.browsers
+
+      - name: Upload artifact for Pages deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: advancement
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
