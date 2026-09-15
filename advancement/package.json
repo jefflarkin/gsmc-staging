@@ -1,0 +1,13 @@
+{
+  "name": "gsmc-advancement-page",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node --watch build.mjs"
+  },
+  "devDependencies": {
+    "marked": "^15.0.0"
+  }
+}

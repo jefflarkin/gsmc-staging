@@ -10,18 +10,21 @@
 	    TEMPLATE: Great Smoky Mountain Council standard page
 	    Source: https://easttnscouts.org/advancement/ (GSMC WordPress theme)
 	    ---------------------------------------------------------------------
-	    HOW TO USE THIS TEMPLATE
-	    1. Change the <title> and meta title below.
-	    2. Add your new page content between the "CONTENT START" and
-	       "CONTENT END" comment markers (empty .wpb_wrapper below is
-	       the drop zone).
-	       Everything OUTSIDE those markers (header, navigation, content
-	       wrapper, footer, search overlay) is the site's fixed look &
-	       structure — do not edit it.
-	    3. Content markup conventions used by this theme (examples in
-	       README.md): one vc_row > vc_column per full-width block, each
-	       block wrapped in .wpb_wrapper, with <p>/<ul>/<ol>/<a>,
-	       headings, images inside.
+	    HOW THIS PAGE IS BUILT
+	    * You write the page content in index.md (Markdown).
+	    * `npm run build` renders index.md into the region between the
+	      BUILD:CONTENT-START / BUILD:CONTENT-END markers and writes
+	      index.html.  `npm run watch` rebuilds on every save.
+	    * This file (_template.html) carries the site's look & structure:
+	      header, menus, content wrapper, footer, search overlay.
+	      Edit it only for chrome changes — the build preserves everything
+	      outside the markers, and it is the source of truth for both
+	      index.html and any future pages.
+	    * Content conventions: `#` = page title (centered above the content),
+	      `##`/`###`/`####` = section headings, standard Markdown tables,
+	      lists, links, images (e.g. ![Cub Scouts logo](images/logo.png)).
+	      Pending links use href="#todo-..." so they are greppable in
+	      index.md (search: #todo-).
 	    ===================================================================== -->
 
 	<title>Advancement - Great Smoky Mountain Council</title>
@@ -61,6 +64,21 @@
 	.wrapper { display: flex; flex-direction: column; min-height: 100vh; }
 	#content { flex: 1 1 auto; }
 	footer.footer { flex: 0 0 auto; }
+
+	/* Page title (the `# heading` from index.md): centered, pushed below
+	   the hanging header chevron band. */
+	.wpb_wrapper > h1 { text-align: center; }
+	.wpb_wrapper > h1:first-child { margin-top: 160px; }
+
+	/* Markdown content tables (GFM pipe tables from index.md) */
+	.entry-content table { border-collapse: collapse; width: 100%; margin: 0 0 2rem; }
+	.entry-content table th, .entry-content table td {
+	  border: 2px solid #6b7340; padding: .6rem .75rem;
+	  text-align: left; vertical-align: top; }
+	.entry-content table th {
+	  font-family: Quantico, sans-serif; text-transform: uppercase;
+	  letter-spacing: .05em; font-size: .95rem;
+	  background: rgba(107, 115, 64, .12); }
 	</style>
 </head>
 
@@ -251,10 +269,9 @@
 						<section class="entry-content" itemprop="articleBody">
 							<div class="wpb-content-wrapper" id="wpb-content-root">
 
-								<!-- ==== CONTENT START — add new page content below this line ====
-								 Building blocks (text, image, spacer) are documented in README.md
-								 and in the captured sample page: src/_research/page.html.
-								 Keep everything inside a vc_row > vc_column > wpb_wrapper. -->
+								<!-- ==== CONTENT REGION — generated from index.md ====
+								     Edit index.md and run `npm run build` (or `npm run watch`).
+								     Do not hand-edit between the BUILD:CONTENT markers. -->
 
 								<div class="vc_row wpb_row vc_row-fluid">
 
@@ -262,13 +279,14 @@
 										<div class="vc_column-inner">
 											<div class="wpb_wrapper">
 
+												<!-- BUILD:CONTENT-START — generated from index.md (npm run build); edit index.md, not this block -->
+												<!-- BUILD:CONTENT-END -->
+
 											</div><!-- .wpb_wrapper -->
 										</div><!-- .vc_column-inner -->
 									</div><!-- .vc_col-sm-12 -->
 
 								</div><!-- .vc_row -->
-
-								<!-- ==== CONTENT END   — new page content above this line ==== -->
 
 							</div>
 						</section><!-- / .entry-content -->

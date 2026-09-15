@@ -10,18 +10,21 @@
 	    TEMPLATE: Great Smoky Mountain Council standard page
 	    Source: https://easttnscouts.org/advancement/ (GSMC WordPress theme)
 	    ---------------------------------------------------------------------
-	    HOW TO USE THIS TEMPLATE
-	    1. Change the <title> and meta title below.
-	    2. Add your new page content between the "CONTENT START" and
-	       "CONTENT END" comment markers (empty .wpb_wrapper below is
-	       the drop zone).
-	       Everything OUTSIDE those markers (header, navigation, content
-	       wrapper, footer, search overlay) is the site's fixed look &
-	       structure — do not edit it.
-	    3. Content markup conventions used by this theme (examples in
-	       README.md): one vc_row > vc_column per full-width block, each
-	       block wrapped in .wpb_wrapper, with <p>/<ul>/<ol>/<a>,
-	       headings, images inside.
+	    HOW THIS PAGE IS BUILT
+	    * You write the page content in index.md (Markdown).
+	    * `npm run build` renders index.md into the region between the
+	      BUILD:CONTENT-START / BUILD:CONTENT-END markers and writes
+	      index.html.  `npm run watch` rebuilds on every save.
+	    * This file (_template.html) carries the site's look & structure:
+	      header, menus, content wrapper, footer, search overlay.
+	      Edit it only for chrome changes — the build preserves everything
+	      outside the markers, and it is the source of truth for both
+	      index.html and any future pages.
+	    * Content conventions: `#` = page title (centered above the content),
+	      `##`/`###`/`####` = section headings, standard Markdown tables,
+	      lists, links, images (e.g. ![Cub Scouts logo](images/logo.png)).
+	      Pending links use href="#todo-..." so they are greppable in
+	      index.md (search: #todo-).
 	    ===================================================================== -->
 
 	<title>Advancement - Great Smoky Mountain Council</title>
@@ -62,12 +65,17 @@
 	#content { flex: 1 1 auto; }
 	footer.footer { flex: 0 0 auto; }
 
-	/* Contact table (Committee & District Contacts) */
-	table.contacts { border-collapse: collapse; width: 100%; margin: 0 0 2rem; }
-	table.contacts th, table.contacts td {
+	/* Page title (the `# heading` from index.md): centered, pushed below
+	   the hanging header chevron band. */
+	.wpb_wrapper > h1 { text-align: center; }
+	.wpb_wrapper > h1:first-child { margin-top: 160px; }
+
+	/* Markdown content tables (GFM pipe tables from index.md) */
+	.entry-content table { border-collapse: collapse; width: 100%; margin: 0 0 2rem; }
+	.entry-content table th, .entry-content table td {
 	  border: 2px solid #6b7340; padding: .6rem .75rem;
 	  text-align: left; vertical-align: top; }
-	table.contacts th {
+	.entry-content table th {
 	  font-family: Quantico, sans-serif; text-transform: uppercase;
 	  letter-spacing: .05em; font-size: .95rem;
 	  background: rgba(107, 115, 64, .12); }
@@ -261,134 +269,98 @@
 						<section class="entry-content" itemprop="articleBody">
 							<div class="wpb-content-wrapper" id="wpb-content-root">
 
-								<!-- Page heading — real-site pattern: spacer so the H1 clears the
-								     header chevron band, then a centered <h1> (/parents/advancement/,
-								     /scouts/ etc. all do exactly this). -->
-								<div class="vc_row wpb_row vc_row-fluid">
-									<div class="wpb_column vc_column_container vc_col-sm-12">
-										<div class="vc_column-inner">
-											<div class="wpb_wrapper">
-												<div class="vc_empty_space" style="height: 160px"><span class="vc_empty_space_inner"></span></div>
-												<h1 style="text-align: center;">Advancement</h1>
-											</div><!-- .wpb_wrapper -->
-										</div><!-- .vc_column-inner -->
-									</div><!-- .vc_col-sm-12 -->
-								</div><!-- .vc_row -->
-
-								<!-- ==== CONTENT START — add new page content below this line ====
-								 Building blocks (text, image, spacer) are documented in README.md
-								 and in the captured sample page: src/_research/page.html.
-								 Keep everything inside a vc_row > vc_column > wpb_wrapper. -->
+								<!-- ==== CONTENT REGION — generated from index.md ====
+								     Edit index.md and run `npm run build` (or `npm run watch`).
+								     Do not hand-edit between the BUILD:CONTENT markers. -->
 
 								<div class="vc_row wpb_row vc_row-fluid">
 
 									<div class="wpb_column vc_column_container vc_col-sm-12">
 										<div class="vc_column-inner">
 											<div class="wpb_wrapper">
-												<p>Advancement is the process by which youth members of Scouting America progress from rank to rank and is the method by which we promote and encourage the ongoing involvement and commitment that keeps members coming back. It works best when it is built into a unit&rsquo;s program so that simply participating leads to meaningful achievement and recognition&mdash;and to a continually improved readiness for more complex experiences.</p>
 
-												<p>Advancement is simply a means to an end, not an end in itself. It is one of several methods designed to help unit leadership carry out the aims and mission of Scouting America. Below you find various resources for advancement and advancement policies within the Great Smoky Mountain Council of Scouting America.</p>
+												<!-- BUILD:CONTENT-START — generated from index.md (npm run build); edit index.md, not this block -->
+          <h1>Advancement</h1>
+          <p>Advancement is the process by which youth members of Scouting America progress from rank to rank and is the method by which we promote and encourage the ongoing involvement and commitment that keeps members coming back. It works best when it is built into a unit&#39;s program so that simply participating leads to meaningful achievement and recognition—and to a continually improved readiness for more complex experiences.</p>
+          <p>Advancement is simply a means to an end, not an end in itself. It is one of several methods designed to help unit leadership carry out the aims and mission of Scouting America. Below you find various resources for advancement and advancement policies within the Great Smoky Mountain Council of Scouting America.</p>
+          <h2>Council Advancement Committee &amp; District Contacts</h2>
+          <table>
+          <thead>
+          <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Contact Information</th>
+          <th>Photo</th>
+          </tr>
+          </thead>
+          <tbody><tr>
+          <td>Les Beaver</td>
+          <td>Council Advancement Committee Chair</td>
+          <td><a href="mailto:LPBeaver4@gmail.com">LPBeaver4@gmail.com</a></td>
+          <td></td>
+          </tr>
+          <tr>
+          <td>Jeff Larkin</td>
+          <td>Awards &amp; Recognitions Coordinator</td>
+          <td><a href="mailto:scouts@jefflarkin.com">scouts@jefflarkin.com</a></td>
+          <td></td>
+          </tr>
+          </tbody></table>
+          <h2>Policies</h2>
+          <p>Please refer to the <a href="https://www.scouting.org/advancement/">Guide to Advancement</a> for national policies and guidance regarding advancement within Scouting America. In certain cases, the guide leaves specific policies to the local council. The policies of GSMC and its districts are linked below. When specifics are unclear, even after reading these policies, please contact the council advancement chair, referenced above.</p>
+          <h3>Scouts BSA</h3>
+          <h4>Rank Advancement</h4>
+          <p>After being awarded the Scout badge by completing the joining requirements and participating in a Scoutmaster conference, there are six ranks that are earned sequentially: Tenderfoot, Second Class, First Class, Star, Life, and Eagle. Once the Scout completes the skills, participation and leadership requirements for each subsequent rank, the Scout participates in a Scoutmaster conference and a board of review. At a board of review, a Scout meets with an adult panel in an informal setting, presents their completion of requirements and answers questions.</p>
+          <p><a href="https://easttnscouts.org/scoutsbsaadvancement/">Learn More</a></p>
+          <h4>Merit Badges</h4>
+          <p>Scouting offers over 130 merit badge opportunities to learn new skills, ranging from outdoor oriented endeavors like camping, to science and technology exploration through robotics. With exposure to a uniquely hands-on learning experience, Scouts unlock a world of discovery around them. Many scouts first experience lifelong passions or even careers through the merit badge process.</p>
+          <p><a href="https://easttnscouts.org/scoutsbsaadvancement/">Learn More</a></p>
+          <p>Unofficial workbooks for most merit badges can be found <a href="#todo-merit-badge-workbooks">here</a>. Although they are not official, many scouts and counselors find them useful in making progress on the badges.</p>
+          <h4>Eagle Information</h4>
+          <p><a href="#todo-eagle-fundraising-policy">GSMC policy for Eagle Scout project fundraising.</a></p>
+          <p><a href="#todo-eagle-lor-policy">GSMC policy for Eagle Scout letters of recommendation.</a></p>
+          <h3>Venturing</h3>
+          <p>Venturing is a youth-led program for males and females aged 14-20 all about building adventures with your friends. Choose to do activities that matter to you and develop essential skills like leadership, event-planning, organization, communication, and responsibility while having a blast!</p>
+          <p><a href="https://easttnscouts.org/venturing/">Learn More</a></p>
+          <h4>Summit Information</h4>
+          <p>The Summit Rank represents Venturing&#39;s highest honor. To achieve this ultimate recognition, you will serve the crew as a leader— both formally and informally— and you will be a mentor to others. In addition, you will strengthen your community be designing and leading a service project to benefit others. The experience gained in earning this rank will help you mature as a member of a team and as an individual.</p>
+          <p><a href="https://easttnscouts.org/venturing/">Learn More</a></p>
+          <h3>Sea Scouts</h3>
+          <p>Sea Scout units– called ships- are established all across the country on oceans, bays, rivers, and lakes. They provide limitless opportunities and exciting challenges that you won&#39;t find anywhere else. Sea Scouts is a place to grow and learn, find adventure, and build long lasting friendships.</p>
+          <p><a href="https://easttnscouts.org/seascouts/">Learn More</a></p>
+          <h4>Quartermaster Information</h4>
+          <p>The Quartermaster Award is the highest rank of Sea Scouting.</p>
+          <p><a href="https://easttnscouts.org/seascouts/">Learn More</a></p>
+          <h3>Cub Scout Information</h3>
+          <p>Cub Scouts is a family-based, grade-specific program for boys and girls. Beginning in Kindergarten and continuing until the child is old enough to join Scouting BSA, cub scouts mix fun and adventure as they learn their place in the world around them.</p>
+          <p><a href="https://easttnscouts.org/cubscouts/">Learn More</a></p>
+          <!-- TODO: add the Cub Scouts logo — put the file in images/ and uncomment:
+          ![Cub Scouts logo](images/cub-scouts-logo.png)
+          -->
+          
+          <h2>Important Links</h2>
+          <h3>Merit Badge Counsellor Process</h3>
+          <p><a href="#todo-merit-badge-counselor-process">Learn More</a></p>
+          <h3>Awards</h3>
+          <p>Beyond advancement, Scouting America provides many opportunities for scouts and adults to be recognized for their achievements. From heroism awards, to outdoor adventure awards, to recruiter and interpreter strips, scouts and adults are eligible for dozens of separate awards.</p>
+          <p><a href="https://easttnscouts.org/scoutsbsaawards/">Learn More</a></p>
+          <h3>Religious Awards</h3>
+          <p>A scout is reverent. No matter the faith a scout practices, there is an award to recognize the practice of their faith.</p>
+          <p><a href="#todo-religious-awards">Learn More</a></p>
+          <h3>Special Needs</h3>
+          <p><a href="https://easttnscouts.org/specialneeds/">Learn More</a></p>
+          <h3>Training</h3>
+          <p>Every scout deserves the support of trained adults and scouts in their unit.</p>
+          <p><a href="https://easttnscouts.org/volunteers/scouting-training/">Learn More</a></p>
+          <h3>Technology/Scoutbook</h3>
+          <p><a href="https://www.scoutbook.com/">Learn More</a></p>
+<!-- BUILD:CONTENT-END -->
 
-												<h2>Council Advancement Committee &amp; District Contacts</h2>
-
-												<table class="contacts">
-													<thead>
-														<tr><th>Name</th><th>Position</th><th>Contact Information</th><th>Photo</th></tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Les Beaver</td>
-															<td>Council Advancement Committee Chair</td>
-															<td><a href="mailto:LPBeaver4@gmail.com">LPBeaver4@gmail.com</a></td>
-															<td><!-- photo --></td>
-														</tr>
-														<tr>
-															<td>Jeff Larkin</td>
-															<td>Awards &amp; Recognitions Coordinator</td>
-															<td><a href="mailto:scouts@jefflarkin.com">scouts@jefflarkin.com</a></td>
-															<td><!-- photo --></td>
-														</tr>
-													</tbody>
-												</table>
-
-												<h2>Policies</h2>
-
-												<p>Please refer to the <a href="https://www.scouting.org/advancement/">Guide to Advancement</a> for national policies and guidance regarding advancement within Scouting America. In certain cases, the guide leaves specific policies to the local council. The policies of GSMC and its districts are linked below. When specifics are unclear, even after reading these policies, please contact the council advancement chair, referenced above.</p>
-
-												<h3>Scouts BSA</h3>
-
-												<h4>Rank Advancement</h4>
-												<p>After being awarded the Scout badge by completing the joining requirements and participating in a Scoutmaster conference, there are six ranks that are earned sequentially: Tenderfoot, Second Class, First Class, Star, Life, and Eagle. Once the Scout completes the skills, participation and leadership requirements for each subsequent rank, the Scout participates in a Scoutmaster conference and a board of review. At a board of review, a Scout meets with an adult panel in an informal setting, presents their completion of requirements and answers questions.</p>
-												<p><a href="https://easttnscouts.org/scoutsbsaadvancement/">Learn More</a></p>
-
-												<h4>Merit Badges</h4>
-												<p>Scouting offers over 130 merit badge opportunities to learn new skills, ranging from outdoor oriented endeavors like camping, to science and technology exploration through robotics. With exposure to a uniquely hands-on learning experience, Scouts unlock a world of discovery around them. Many scouts first experience lifelong passions or even careers through the merit badge process.</p>
-												<p><a href="https://easttnscouts.org/scoutsbsaadvancement/">Learn More</a></p>
-												<p>Unofficial workbooks for most merit badges can be found <a href="#">here</a>. Although they are not official, many scouts and counselors find them useful in making progress on the badges.</p>
-
-												<h4>Eagle Information</h4>
-												<p><a href="#">GSMC policy for Eagle Scout project fundraising.</a></p>
-												<p><a href="#">GSMC policy for Eagle Scout letters of recommendation.</a></p>
-
-												<h3>Venturing</h3>
-												<p>Venturing is a youth-led program for males and females aged 14-20 all about building adventures with your friends. Choose to do activities that matter to you and develop essential skills like leadership, event-planning, organization, communication, and responsibility while having a blast!</p>
-												<p><a href="https://easttnscouts.org/venturing/">Learn More</a></p>
-
-												<h4>Summit Information</h4>
-												<p>The Summit Rank represents Venturing&rsquo;s highest honor. To achieve this ultimate recognition, you will serve the crew as a leader&mdash; both formally and informally&mdash; and you will be a mentor to others. In addition, you will strengthen your community be designing and leading a service project to benefit others. The experience gained in earning this rank will help you mature as a member of a team and as an individual.</p>
-												<p><a href="https://easttnscouts.org/venturing/">Learn More</a></p>
-
-												<h3>Sea Scouts</h3>
-												<p>Sea Scout units&ndash; called ships- are established all across the country on oceans, bays, rivers, and lakes. They provide limitless opportunities and exciting challenges that you won&rsquo;t find anywhere else. Sea Scouts is a place to grow and learn, find adventure, and build long lasting friendships.</p>
-												<p><a href="https://easttnscouts.org/seascouts/">Learn More</a></p>
-
-												<h4>Quartermaster Information</h4>
-												<p>The Quartermaster Award is the highest rank of Sea Scouting.</p>
-												<p><a href="https://easttnscouts.org/seascouts/">Learn More</a></p>
-
-												<h3>Cub Scout Information</h3>
-												<p>Cub Scouts is a family-based, grade-specific program for boys and girls. Beginning in Kindergarten and continuing until the child is old enough to join Scouting BSA, cub scouts mix fun and adventure as they learn their place in the world around them.</p>
-												<p><a href="https://easttnscouts.org/cubscouts/">Learn More</a></p>
-
-												<!-- Drop the Cub Scouts logo image here when you have the file, e.g.:
-												<div class="wpb_single_image wpb_content_element vc_align_center">
-												  <figure class="wpb_wrapper vc_figure">
-													  <div class="vc_single_image-wrapper">
-														  <img src="images/cub-scouts-logo.png" class="vc_single_image-img" alt="Cub Scouts logo" />
-													  </div>
-												  </figure>
-												</div>
-												-->
-
-												<h2>Important Links</h2>
-
-												<h3>Merit Badge Counsellor Process</h3>
-												<p><a href="#">Learn More</a></p>
-
-												<h3>Awards</h3>
-												<p>Beyond advancement, Scouting America provides many opportunities for scouts and adults to be recognized for their achievements. From heroism awards, to outdoor adventure awards, to recruiter and interpreter strips, scouts and adults are eligible for dozens of separate awards.</p>
-												<p><a href="https://easttnscouts.org/scoutsbsaawards/">Learn More</a></p>
-
-												<h3>Religious Awards</h3>
-												<p>A scout is reverent. No matter the faith a scout practices, there is an award to recognize the practice of their faith.</p>
-												<p><a href="#">Learn More</a></p>
-
-												<h3>Special Needs</h3>
-												<p><a href="https://easttnscouts.org/specialneeds/">Learn More</a></p>
-
-												<h3>Training</h3>
-												<p>Every scout deserves the support of trained adults and scouts in their unit.</p>
-												<p><a href="https://easttnscouts.org/volunteers/scouting-training/">Learn More</a></p>
-
-												<h3>Technology/Scoutbook</h3>
-												<p><a href="https://www.scoutbook.com/">Learn More</a></p>
 											</div><!-- .wpb_wrapper -->
 										</div><!-- .vc_column-inner -->
 									</div><!-- .vc_col-sm-12 -->
 
 								</div><!-- .vc_row -->
-
-								<!-- ==== CONTENT END   — new page content above this line ==== -->
 
 							</div>
 						</section><!-- / .entry-content -->
