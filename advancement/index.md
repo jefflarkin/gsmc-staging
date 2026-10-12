@@ -25,6 +25,8 @@ Please refer to the [Guide to Advancement](https://www.scouting.org/advancement/
 
 ### [Sea Scouts & Quartermaster Award](seascouts/)
 
+<br/>
+
 ## Important Links
 
 ### Merit Badge Counsellor Process
