@@ -17,10 +17,13 @@ Please refer to the [Guide to Advancement](https://www.scouting.org/advancement/
 
 ## Program-Specific Pages
 
-* [Cub Scouts](cub-scouts/)
-* [Scouts BSA & Eagle Scout](scouts-bsa/)
-* [Venturing & Summit Award](venturing/)
-* [Sea Scouts & Quartermaster Award](seascouts/)
+### [Cub Scouts](cub-scouts/)
+
+### [Scouts BSA & Eagle Scout](scouts-bsa/)
+
+### [Venturing & Summit Award](venturing/)
+
+### [Sea Scouts & Quartermaster Award](seascouts/)
 
 ## Important Links
 
