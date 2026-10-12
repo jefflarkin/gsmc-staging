@@ -45,14 +45,20 @@ jobs:
       - name: Package artifact for upload
         shell: bash
         run: |
-          # Keep only what the site serves (node_modules & local caches are
-          # gitignored, which the uploader also respects, but be explicit).
-          rm -rf advancement/node_modules advancement/.npmcache advancement/.browsers
+          # Serve under /advancement/ on the Pages site: mirror the built
+          # site into .pages/advancement and keep only what it serves.
+          # (node_modules & local caches are gitignored, but be explicit.)
+          rm -rf .pages
+          mkdir -p .pages
+          cp -r advancement .pages/advancement
+          rm -rf .pages/advancement/node_modules \
+                 .pages/advancement/.npmcache \
+                 .pages/advancement/.browsers
 
       - name: Upload artifact for Pages deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: advancement
+          path: .pages
 
   deploy:
     environment:
