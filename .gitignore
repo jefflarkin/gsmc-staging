@@ -3,6 +3,7 @@
 .npmcache/
 .home/
 node_modules/
+index.html
 
 # OS / editor noise
 .DS_Store
