@@ -14,5 +14,6 @@ Scouting offers over 130 merit badge opportunities to learn new skills, ranging 
 
 Unofficial workbooks for most merit badges can be found [here](#todo-merit-badge-workbooks). Although they are not official, many scouts and counselors find them useful in making progress on the badges.
 
+## [Eagle Scout Information](eagle/)
 
 [Back to Advancement](../)
